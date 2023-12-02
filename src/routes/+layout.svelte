@@ -3,38 +3,27 @@
 	import { Confetti } from 'svelte-confetti';
 </script>
 
-<head>
-	<link
-		rel="icon"
-		href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎅</text></svg>"
+<header>
+	<nav class="p-2 border-b-white border-b-2">
+		<a href="/" class="font-bold">Heim</a>
+	</nav>
+</header>
+<slot />
+<div class="confetti">
+	<Confetti
+		x={[-5, 5]}
+		y={[0, 0.1]}
+		delay={[500, 2000]}
+		infinite
+		colorArray={['#fff']}
+		duration={5000}
+		size={5}
+		amount={100}
+		fallDistance="100vh"
 	/>
-</head>
-<body>
-	<header>
-		<nav class="p-2 border-b-white border-b-2">
-			<a href="/" class="font-bold">Heim</a>
-		</nav>
-	</header>
-	<slot />
-	<div class="confetti">
-		<Confetti
-			x={[-5, 5]}
-			y={[0, 0.1]}
-			delay={[500, 2000]}
-			infinite
-			colorArray={['#fff']}
-			duration={5000}
-			size={5}
-			amount={100}
-			fallDistance="100vh"
-		/>
-	</div>
-</body>
+</div>
 
 <style lang="postcss">
-	:global(html, body) {
-		height: 100%;
-	}
 	:global(html) {
 		background: linear-gradient(theme(colors.red-dark), theme(colors.red-light));
 		background-attachment: fixed;
