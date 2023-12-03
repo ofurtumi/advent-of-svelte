@@ -10,7 +10,17 @@ export default {
 			brown: '#332124',
 			white: '#DECACD'
 		},
-		extend: {}
+		extend: {
+			button: {
+				primary: {
+					color: '#DECACD',
+					backgroundColor: '#332124',
+					'&:hover': {
+						backgroundColor: '#702D36'
+					}
+				}
+			}
+		}
 	},
 	plugins: []
 };
